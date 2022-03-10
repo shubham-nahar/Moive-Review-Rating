@@ -10,7 +10,7 @@
 5. Now You can Register a User.
 6. To make anyon Admin go to Database and change value to Admin
 7. Now Admin can Add Movie or Edit Details
-8. User can Review about Movie and Ad Balane to their Account.
+8. User can Review about Movie and Ad Balance to their Account.
 
 # There are More Scope of Improvement.
 
