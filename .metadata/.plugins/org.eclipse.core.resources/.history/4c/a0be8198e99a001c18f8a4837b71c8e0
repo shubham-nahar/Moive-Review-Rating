@@ -1,0 +1,54 @@
+package com.flixme.dao;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.flixme.entity.Movie;
+
+@Repository
+public class MovieDaoHibernateImpl implements MovieDao {
+
+	@Override
+	public void addMovie(Movie m) throws DaoException {
+		
+	}
+
+	@Override
+	public void updateMovie(Movie m) throws DaoException {
+		
+	}
+
+	@Override
+	public Movie findById(Integer id) throws DaoException {
+	}
+
+	@Override
+	public List<Movie> getAllMovies() throws DaoException {
+	}
+
+	@Override
+	public Movie getMovieByName(String name) throws DaoException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Movie> getMovieByGenere(String genere) throws DaoException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Movie> getMovieByReleaseYear(Integer year) throws DaoException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Movie> getMovieByCast(String name) throws DaoException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

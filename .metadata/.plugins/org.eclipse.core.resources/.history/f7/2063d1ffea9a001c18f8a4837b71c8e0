@@ -1,0 +1,142 @@
+package com.flixme.controllers;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.flixme.dao.DaoException;
+import com.flixme.dao.UserDao;
+import com.flixme.entity.User;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@Controller("userController")
+public class UserController {
+
+	@Autowired
+	private UserDao dao;
+
+	@RequestMapping(method = RequestMethod.GET, path = "/login")
+	public String getLoginForm() {
+
+		return "login-form";
+	}// end method
+
+	@RequestMapping(method = RequestMethod.POST, path = "/login")
+	public String handleLogin(@RequestParam String email, @RequestParam String password, HttpSession session,
+			Model model) {
+		User user;
+		try {
+			user = dao.findByEmail(email);
+			if (user.getPassword().equals(password)) {
+				session.setAttribute("loggedInUser", user);
+				return "redirect:/";
+			} // end if
+			model.addAttribute("errmsg", "Invalid UserName/password");
+			return "login-form";
+
+		} catch (DaoException e) {
+			model.addAttribute("errmsg", "Invalid UserName/password");
+			return "login-form";
+
+		}
+
+	}
+
+	@RequestMapping(method = RequestMethod.GET, path = "/register")
+	public String getRegistrationForm(Model model) {
+		model.addAttribute("cust", new Customer());
+		return "registration-form";
+	}// end method
+
+	@RequestMapping(method = RequestMethod.POST, path = "/register")
+	public String handleRegistration(@ModelAttribute("cust") Customer customer) {
+		try {
+
+			dao.addNewCustomer(customer);
+		} catch (DaoException e) {
+
+			e.printStackTrace();
+		}
+		return "login-form";
+	}// end method
+
+	@GetMapping("/logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "redirect:/";
+	}// end method
+
+	// Profile Controllers
+
+	@GetMapping("/profile")
+	public String profile() {
+		return "view-profile";
+	}// end method
+
+	@GetMapping("/edit-profile")
+	public String editProfile(Model model, HttpSession session) {
+
+		Customer cust = new Customer();
+		cust.setId(((Customer) session.getAttribute("loggedInUser")).getId());
+		model.addAttribute("customer", cust);
+		log.debug("*************profile editor get method**************");
+		return "edit-profile";
+	}// end method
+
+	@PostMapping("/edit-profile")
+	public String editProfilHandler(@ModelAttribute("customer") Customer cust, HttpSession session) {
+		Customer c = (Customer) session.getAttribute("loggedInUser");
+
+		if (c == null) {
+			return "redirect:/login";
+		}
+
+		cust.setPassword(c.getPassword());
+		cust.setBalance(c.getBalance());
+
+		try {
+			dao.updateCustomer(cust);
+			// model.addAttribute("msg", "user details successfully updated");
+			session.setAttribute("loggedInUser", cust);
+			return "Index";
+		} catch (DaoException e) {
+
+			e.printStackTrace();
+		}
+		return "edit-profile";
+	}// end method
+
+	// Balance controllers
+
+	@GetMapping("/check-balance")
+	public String getBalance() {
+
+		return "check-balance";
+	}
+
+	@GetMapping("/add-balance")
+	public String updateBalance() {
+		return "add-balance";
+	}
+
+	@PostMapping("/add-balance")
+	public String updateBalanceHandler(@RequestParam double balance, HttpSession session) {
+		Customer cust = (Customer) session.getAttribute("loggedInUser");
+		cust.setBalance(cust.getBalance() + balance);
+		try {
+			dao.updateBalance(cust);
+		} catch (DaoException e) {
+
+			log.debug(e.getMessage());
+		}
+		return "redirect:/";
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.flixme.service;
+
+public class UserService {
+
+}

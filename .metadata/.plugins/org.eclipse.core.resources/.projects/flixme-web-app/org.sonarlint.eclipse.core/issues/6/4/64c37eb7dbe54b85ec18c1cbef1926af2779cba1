@@ -1,0 +1,12 @@
+
+{
+java:S1192'"FDefine a constant instead of duplicating this literal "movie" 3 times.(ΐν¤(8Ύ‡Τύτ/HΚRCRITICALZ
+CODE_SMELL
+f
+java:S2441'";Make "Movie" serializable or don't store it in the session.(ΐν¤(8Ύ‡Τύτ/HΞRMAJORZBUG
+p	java:S106G"9Replace this use of System.out or System.err by a logger.(Ρ‘ψϊÿÿÿÿ8Ύ‡Τύτ/HΟRMAJORZ
+CODE_SMELL
+[	java:S108*")Either remove or fill this block of code.(”ύΎ8Ύ‡Τύτ/HΠRMAJORZ
+CODE_SMELL
+y
+java:S46842"@Replace this persistent entity with a simple POJO or DTO object.(­σ’8Ύ‡Τύτ/HΡRCRITICALZVULNERABILITY

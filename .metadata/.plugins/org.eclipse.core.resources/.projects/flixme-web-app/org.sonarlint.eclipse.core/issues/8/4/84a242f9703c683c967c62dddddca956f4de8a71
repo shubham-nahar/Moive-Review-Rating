@@ -1,0 +1,37 @@
+
+{
+java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(©“ûÉ8ş•®ıô/HŠRMINORZ
+CODE_SMELL
+†
+java:S1192"KDefine a constant instead of duplicating this literal "login-form" 4 times.(„Óûÿÿÿÿ8ş•®ıô/H”RCRITICALZ
+CODE_SMELL
+}
+java:S4488A"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(ˆ¼¹8ş•®ıô/H‘RMINORZ
+CODE_SMELL
+x
+java:S4684B"@Replace this persistent entity with a simple POJO or DTO object.(à›Œ8¡¼Ãıô/H¶RCRITICALZVULNERABILITY
+k
+java:S2441r":Make "User" serializable or don't store it in the session.(ÅÌÉıÿÿÿÿ8¡¼Ãıô/H·RMAJORZBUG
+
+java:S1192+"KDefine a constant instead of duplicating this literal "redirect:/" 3 times.(äÔ¶½8ş•®ıô/HŸRCRITICALZ
+CODE_SMELL
+k
+java:S2441)":Make "User" serializable or don't store it in the session.(ÅÌÉıÿÿÿÿ8ş•®ıô/HRMAJORZBUG
+ˆ
+java:S1192)"MDefine a constant instead of duplicating this literal "loggedInUser" 5 times.(ÅÌÉıÿÿÿÿ8ş•®ıô/H™RCRITICALZ
+CODE_SMELL
+s	java:S125q"<This block of commented-out lines of code should be removed.( ²Öƒûÿÿÿÿ8ş•®ıô/H“RMAJORZ
+CODE_SMELL
+~
+java:S4684e"@Replace this persistent entity with a simple POJO or DTO object.(óƒÏıûÿÿÿÿ8¡¼Ãıô/HµRCRITICALZVULNERABILITY
+p	java:S106*"9Replace this use of System.out or System.err by a logger.(€ó¼¯ÿÿÿÿÿ8®ïƒ™õ/H’RMAJORZ
+CODE_SMELL
+‚
+java:S4488""JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(Ë†çûøÿÿÿÿ8ş•®ıô/HŒRMINORZ
+CODE_SMELL
+p	java:S106-"9Replace this use of System.out or System.err by a logger.(ØÖ¢†ùÿÿÿÿ8×ŞÄ™õ/HºRMAJORZ
+CODE_SMELL
+p	java:S1062"9Replace this use of System.out or System.err by a logger.(ç‡Õüÿÿÿÿ8×ŞÄ™õ/H»RMAJORZ
+CODE_SMELL
+j	java:S106<"9Replace this use of System.out or System.err by a logger.(¹ğïW8×ŞÄ™õ/H¼RMAJORZ
+CODE_SMELL

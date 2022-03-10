@@ -1,0 +1,5 @@
+package com.flixme.cfg;
+
+public class AppConfig {
+
+}

@@ -1,0 +1,16 @@
+com\flixme\dao\UserDao.class
+com\flixme\dao\ReviewDao.class
+com\flixme\controllers\UserController.class
+com\flixme\dao\ReviewDaoImpl.class
+com\flixme\entity\Movie.class
+com\flixme\dao\MovieDao.class
+com\flixme\dao\MovieDaoHibernateImpl.class
+com\flixme\cfg\AppConfig.class
+com\flixme\dao\DaoException.class
+com\flixme\entity\Review.class
+com\flixme\service\ServiceException.class
+com\flixme\service\UserService.class
+com\flixme\controllers\MovieController.class
+com\flixme\controllers\ReviewController.class
+com\flixme\entity\User.class
+com\flixme\dao\UserDaoHibernateImpl.class

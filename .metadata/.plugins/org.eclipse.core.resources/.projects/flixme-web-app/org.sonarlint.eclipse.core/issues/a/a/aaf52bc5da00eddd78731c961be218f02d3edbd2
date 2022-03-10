@@ -1,0 +1,9 @@
+
+^
+java:S1874%",Remove this use of "find"; it is deprecated.(ŞÄÅË8Ğ×ıô/HcRMINORZ
+CODE_SMELL
+]
+java:S1168+"+Return an empty collection instead of null.(¥¹ï8Ğ×ıô/HdRMAJORZ
+CODE_SMELL
+i	java:S106"9Replace this use of System.out or System.err by a logger.(Ï€Ê\8Ğ×ıô/HbRMAJORZ
+CODE_SMELL
